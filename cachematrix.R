@@ -30,9 +30,9 @@ cacheSolve <- function(x, ...) {
     currentInverseMatrix <- x$getInverseMatrix();
     if (is.null(currentInverseMatrix)){
         currentMatrix <- x$get();
-        newInverseMatrix <- solve(currentMatrix, ...);
-        x$setInverseMatrix(newInverseMatrix);
+        currentInverseMatrix <- solve(currentMatrix, ...);
+        x$setInverseMatrix(currentInverseMatrix);
     }
     
-    x$getInverseMatrix();
+    currentInverseMatrix;
 }
